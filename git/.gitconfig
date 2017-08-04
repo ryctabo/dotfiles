@@ -1,0 +1,10 @@
+[user]
+	name = Gustavo Pacheco
+	email = ryctabo@gmail.com
+[alias]
+	lod = log --oneline --decorate
+	undo = checkout --
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[core]
+	editor = vim
