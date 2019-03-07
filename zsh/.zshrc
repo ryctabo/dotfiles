@@ -12,10 +12,12 @@ DEFAULT_USER="ryctabo"
 plugins=(git)
 # Source Oh-my-zsh :3
 source $ZSH/oh-my-zsh.sh
+source ~/.profile
 
 # User configuration
 # Language environment
-export LANG=es_CO.UTF-8
+export LANG=en_US.UTF-8
+
 # Preferred editor 
 export EDITOR='vim'
 
