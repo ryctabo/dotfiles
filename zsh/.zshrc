@@ -31,3 +31,7 @@ if [ -d $GRADLE_HOME/bin ]; then
 	PATH="$PATH:$GRADLE_HOME/bin";
 fi
 
+if [ -d $HOME/.npm/bin ]; then
+	PATH="$PATH:$HOME/.npm/bin";
+fi
+
