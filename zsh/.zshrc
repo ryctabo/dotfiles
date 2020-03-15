@@ -37,3 +37,13 @@ if [ -d $HOME/.npm/bin ]; then
 	PATH="$PATH:$HOME/.npm/bin";
 fi
 
+# Dir: current working directory
+prompt_dir() {
+  prompt_segment blue $CURRENT_FG '%c'
+}
+
+# Context: user@hostname (who am I and where am I)
+prompt_context() {
+	prompt_segment black default "✪"
+}
+
