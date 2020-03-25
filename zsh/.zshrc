@@ -16,6 +16,11 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
 
+# Source NVM
+if [ -d /usr/share/nvm ]; then
+	source /usr/share/nvm/init-nvm.sh
+fi
+
 # User configuration
 # Language environment
 export LANG=en_US.UTF-8
