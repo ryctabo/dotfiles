@@ -51,7 +51,7 @@ prompt_dir() {
 prompt_context() {
 	if [[ $(id -u) -ne 0 ]]; then
 		prompt_segment black default "✪"
-	elif [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+	else
 		prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
 	fi
 }
