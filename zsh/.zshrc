@@ -49,6 +49,10 @@ prompt_dir() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-	prompt_segment black default "✪"
+	if [[ $(id -u) -ne 0 ]]; then
+		prompt_segment black default "✪"
+	elif [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+		prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+	fi
 }
 
