@@ -14,7 +14,9 @@ DEFAULT_USER="$USER"
 plugins=(git)
 # Source Oh-my-zsh :3
 source $ZSH/oh-my-zsh.sh
-source ~/.profile
+if [ -d ~/.profile ]; then
+	source ~/.profile
+fi
 
 # Source NVM
 if [ -d /usr/share/nvm ]; then
