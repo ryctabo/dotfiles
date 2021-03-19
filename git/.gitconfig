@@ -4,10 +4,17 @@
 	signingkey = 9D07040B049B7418
 [alias]
 	lod = log --oneline --decorate
-	undo = checkout --
-	unstage = reset HEAD --
+	undo = restore
+	unstage = restore --staged
 	last = log -1 HEAD
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	graph = log --oneline --decorate --graph
 [core]
 	editor = vim
 [pull]
 	rebase = false
+[init]
+	defaultBranch = master
