@@ -1,7 +1,7 @@
 [user]
 	name = Gustavo Pacheco
 	email = ryctabo@gmail.com
-	signingkey = 3E02E16F7D2E54C0
+	signingkey = 7A4D488492A98C0A
 [alias]
 	lod = log --oneline --decorate
 	undo = restore
