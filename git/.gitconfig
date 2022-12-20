@@ -1,7 +1,7 @@
 [user]
 	name = Gustavo Pacheco
 	email = ryctabo@gmail.com
-	signingkey = 7A4D488492A98C0A
+	signingkey = B42CE82ED1085A9D
 [alias]
 	lod = log --oneline --decorate
 	undo = restore
@@ -17,6 +17,11 @@
 [pull]
 	rebase = false
 [init]
-	defaultBranch = master
+	defaultbranch = main
 [commit]
 	gpgsign = true
+[includeIf "gitdir:~/TravelX/"]
+	path = ~/TravelX/.gitconfig
+[includeIf "gitdir:~/Almundo/"]
+	path = ~/Almundo/.gitconfig
+
