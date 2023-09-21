@@ -58,3 +58,10 @@ prompt_context() {
 	fi
 }
 
+
+# bun completions
+[ -s "/home/ryctabo/.bun/_bun" ] && source "/home/ryctabo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
