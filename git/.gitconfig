@@ -25,4 +25,6 @@
 	path = ~/TravelX/.gitconfig
 [includeIf "gitdir:~/Almundo/"]
 	path = ~/Almundo/.gitconfig
+[includeIf "gitdir:~/Justo/"]
+	path = ~/Justo/.gitconfig
 
