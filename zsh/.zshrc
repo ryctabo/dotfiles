@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Oh-my-zsh theme, for more information go to the following link:
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="ryctabo"
 DEFAULT_USER="$USER"
 
 # Oh-my-zsh plugin, E.g. plugins(git brew ruby rails)
