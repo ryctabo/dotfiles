@@ -36,13 +36,14 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 
 # Set up PATH environment
+typeset -U path PATH
 # Enable maven
-if [ -d $MVN_HOME/bin ]; then
+if [[ -n "$MVN_HOME" && -d "$MVN_HOME/bin" ]]; then
 	PATH="$PATH:$MVN_HOME/bin";
 fi
 
 # Enable gradle
-if [ -d $GRADLE_HOME/bin ]; then
+if [[ -n "$GRADLE_HOME" && -d "$GRADLE_HOME/bin" ]]; then
 	PATH="$PATH:$GRADLE_HOME/bin";
 fi
 
