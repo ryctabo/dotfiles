@@ -32,8 +32,15 @@ fi
 # Language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor 
-export EDITOR='vim'
+# Load shared configuration relative to this file's resolved location.
+for dotfiles_config in "${${(%):-%x}:A:h:h}"/system/.env \
+                       "${${(%):-%x}:A:h:h}"/system/.alias \
+                       "${${(%):-%x}:A:h:h}"/system/.functions; do
+	if [ -r "$dotfiles_config" ]; then
+		source "$dotfiles_config"
+	fi
+done
+unset dotfiles_config
 
 # Set up PATH environment
 typeset -U path PATH
