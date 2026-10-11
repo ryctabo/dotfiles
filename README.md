@@ -19,6 +19,9 @@ and conflicting links are moved to a unique `~/.dotfiles-backup.*`
 directory, whose path is printed. Running it again skips correct links.
 Zsh loads the files in `system/` directly from the repository.
 
+See the [system configuration usage guide](system/README.md) for environment
+variables, aliases, and examples of the `mk` and `extract` functions.
+
 To restore a backup, remove the corresponding installed symlink and move
 the saved file back to its original location. Open a new Zsh session to
 load the configuration. The installer does not change your login shell
