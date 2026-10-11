@@ -4,7 +4,7 @@
 These are my dotfiles. Take anything you want, but at your own risk.
 
 ## How to install?
-Requires Git and Zsh. Install tmux to use its configuration. Oh My Zsh
+Requires Git and Zsh. Use tmux 2.9 or later for its configuration. Oh My Zsh
 is optional (the configured theme is `half-life`). For Node.js, install
 FNM or use the system NVM installation at `/usr/share/nvm/init-nvm.sh`;
 FNM takes priority. Bun, Maven and Gradle are optional.
