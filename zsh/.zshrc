@@ -14,18 +14,19 @@ DEFAULT_USER="$USER"
 plugins=(git)
 
 # Source Oh-my-zsh :3
-source $ZSH/oh-my-zsh.sh
+if [ -r "$ZSH/oh-my-zsh.sh" ]; then
+	source "$ZSH/oh-my-zsh.sh"
+fi
 if [ -r "$HOME/.profile" ]; then
 	source ~/.profile
 fi
 
-# Source NVM
-if [ -d /usr/share/nvm ]; then
+# Prefer FNM; fall back to the system NVM installation.
+if command -v fnm >/dev/null 2>&1; then
+	eval "$(fnm env --use-on-cd --shell zsh)"
+elif [ -r /usr/share/nvm/init-nvm.sh ]; then
 	source /usr/share/nvm/init-nvm.sh
 fi
-
-# FNM configuration
-eval "$(fnm env --use-on-cd --shell zsh)"
 
 # User configuration
 # Language environment
