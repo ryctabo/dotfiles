@@ -7,11 +7,12 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Oh-my-zsh theme, for more information go to the following link:
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="ryctabo"
+ZSH_THEME="half-life"
 DEFAULT_USER="$USER"
 
 # Oh-my-zsh plugin, E.g. plugins(git brew ruby rails)
 plugins=(git)
+
 # Source Oh-my-zsh :3
 source $ZSH/oh-my-zsh.sh
 if [ -d ~/.profile ]; then
@@ -22,6 +23,9 @@ fi
 if [ -d /usr/share/nvm ]; then
 	source /usr/share/nvm/init-nvm.sh
 fi
+
+# FNM configuration
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # User configuration
 # Language environment
@@ -35,13 +39,10 @@ export EDITOR='vim'
 if [ -d $MVN_HOME/bin ]; then
 	PATH="$PATH:$MVN_HOME/bin";
 fi
+
 # Enable gradle
 if [ -d $GRADLE_HOME/bin ]; then
 	PATH="$PATH:$GRADLE_HOME/bin";
-fi
-# Enable NPM
-if [ -d $HOME/.npm/bin ]; then
-	PATH="$PATH:$HOME/.npm/bin";
 fi
 
 # Dir: current working directory
@@ -64,3 +65,7 @@ prompt_context() {
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> Codex installer >>>
+export PATH="/home/ryctabo/.local/bin:$PATH"
+# <<< Codex installer <<<
