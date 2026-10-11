@@ -15,7 +15,7 @@ plugins=(git)
 
 # Source Oh-my-zsh :3
 source $ZSH/oh-my-zsh.sh
-if [ -d ~/.profile ]; then
+if [ -r "$HOME/.profile" ]; then
 	source ~/.profile
 fi
 
