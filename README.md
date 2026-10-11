@@ -24,4 +24,13 @@ the saved file back to its original location. Open a new Zsh session to
 load the configuration. The installer does not change your login shell
 or install dependencies.
 
+## Personal Git configuration
+
+The shared Git configuration includes `~/.dotfiles/git/.gitconfig.local`,
+which is ignored by Git. Before your first commit, copy
+`git/.gitconfig.local.example` to `git/.gitconfig.local` and set your name
+and email. Enable GPG signing only when your private key is available.
+Keep work-specific includes in this local file as well. If you install
+the repository elsewhere, update the include path in `git/.gitconfig`.
+
 Thanks for visiting my dotfiles. :wink:

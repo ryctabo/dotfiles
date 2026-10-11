@@ -1,7 +1,5 @@
-[user]
-	name = Gustavo Pacheco
-	email = ryctabo@gmail.com
-	signingkey = 276EE881B315AF7E
+[include]
+		path = ~/.dotfiles/git/.gitconfig.local
 
 [alias]
 	lod = log --oneline --decorate
@@ -23,10 +21,4 @@
 
 [init]
 	defaultbranch = main
-
-[commit]
-	gpgsign = true
-
-[includeIf "gitdir:~/Justo/**"]
-	path = ~/Justo/.gitconfig
 

@@ -1,0 +1,13 @@
+[user]
+	name = Your Name
+	email = you@example.com
+
+# Enable signing only after importing and verifying your own GPG key.
+# [user]
+# 	signingkey = YOUR_GPG_KEY_ID
+# [commit]
+# 	gpgsign = true
+
+# Optional configuration for work repositories.
+# [includeIf "gitdir:~/work/"]
+# 	path = ~/work/.gitconfig
