@@ -5,12 +5,29 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Oh-my-zsh theme, for more information go to the following link:
-# https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="half-life"
 DEFAULT_USER="$USER"
 
-# Oh-my-zsh plugin, E.g. plugins(git brew ruby rails)
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 # Source Oh-my-zsh :3
@@ -28,7 +45,6 @@ elif [ -r /usr/share/nvm/init-nvm.sh ]; then
 	source /usr/share/nvm/init-nvm.sh
 fi
 
-# User configuration
 # Language environment
 export LANG=en_US.UTF-8
 
@@ -44,6 +60,7 @@ unset dotfiles_config
 
 # Set up PATH environment
 typeset -U path PATH
+
 # Enable maven
 if [[ -n "$MVN_HOME" && -d "$MVN_HOME/bin" ]]; then
 	PATH="$PATH:$MVN_HOME/bin";
