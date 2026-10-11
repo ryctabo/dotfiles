@@ -1,7 +1,8 @@
 #!/bin/sh
+# Install basic tools using the available package manager.
 set -eu
 
-# Homebrew runs as the current user; system package managers need root.
+# Prefer Homebrew; it does not require sudo.
 if command -v brew >/dev/null 2>&1; then
     exec brew install git zsh tmux vim unzip
 fi
@@ -17,6 +18,7 @@ else
     exit 1
 fi
 
+# System package managers require root or sudo.
 run_as_root() {
     if [ "$(id -u)" -eq 0 ]; then
         "$@"

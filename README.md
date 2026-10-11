@@ -28,8 +28,16 @@ make help       # Show available commands
 make deps       # Install basic dependencies
 make git-local  # Create Git local configuration without overwriting it
 make install    # Prepare Git local configuration and link dotfiles
-make check      # Check tools and installer syntax
+make check      # Check installed links, tools and configurations
 ```
+
+`make check` checks required tools, installed symlink targets, shell/Zsh
+syntax, loading of shared Zsh files, and Git configuration and identity.
+It also loads the tmux configuration in a temporary isolated server, which
+is stopped afterwards. It does not execute your `.zshrc` or personal plugins.
+Missing optional tools produce warnings; failures return a nonzero exit code.
+The command reports all checks without installing packages or changing your
+configuration. Git identity values are not printed.
 
 The installer links the Zsh, tmux and Git configurations. Existing files
 and conflicting links are moved to a unique `~/.dotfiles-backup.*`

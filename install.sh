@@ -1,4 +1,5 @@
 #!/bin/sh
+# Install symlinks and back up existing configurations.
 set -eu
 
 repo_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
@@ -11,6 +12,7 @@ for entry in tmux/.tmux.conf zsh/.zshrc git/.gitconfig; do
         printf 'Already installed: %s\n' "$target_path"
         continue
     fi
+    # Keep conflicting files in a single backup directory per run.
     if [ -e "$target_path" ] || [ -L "$target_path" ]; then
         if [ -z "$backup_dir" ]; then
             backup_dir=$(mktemp -d "$HOME/.dotfiles-backup.XXXXXX")
