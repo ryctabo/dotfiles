@@ -1,29 +1,40 @@
 # Create a new directory and enter it
 function mk() {
-  mkdir -p "$@" && cd "$@"
+  if (( $# != 1 )); then
+    print -u2 'Usage: mk <directory>'
+    return 2
+  fi
+  mkdir -p -- "$1" && cd -- "$1"
 }
 
 # Extract many types of compressed packages
 # Credit: http://nparikh.org/notes/zshrc.txt
 extract() {
-  if [ -f "$1" ]; then
-    case "$1" in
-      *.tar.bz2)  tar -jxvf "$1"                        ;;
-      *.tar.gz)   tar -zxvf "$1"                        ;;
-      *.bz2)      bunzip2 "$1"                          ;;
-      *.dmg)      hdiutil mount "$1"                    ;;
-      *.gz)       gunzip "$1"                           ;;
-      *.tar)      tar -xvf "$1"                         ;;
-      *.tbz2)     tar -jxvf "$1"                        ;;
-      *.tgz)      tar -zxvf "$1"                        ;;
-      *.zip)      unzip "$1"                            ;;
-      *.ZIP)      unzip "$1"                            ;;
-      *.pax)      cat "$1" | pax -r                     ;;
-      *.pax.Z)    uncompress "$1" --stdout | pax -r     ;;
-      *.Z)        uncompress "$1"                       ;;
-      *) echo "'$1' cannot be extracted/mounted via extract()" ;;
+  if (( $# != 1 )); then
+    print -u2 'Usage: extract <archive>'
+    return 2
+  fi
+  # Make relative paths absolute so leading hyphens are not parsed as options.
+  local archive="${1:a}"
+  if [ -f "$archive" ]; then
+    case "$archive" in
+      *.tar.bz2)  tar -jxvf "$archive"                        ;;
+      *.tar.gz)   tar -zxvf "$archive"                        ;;
+      *.bz2)      bunzip2 "$archive"                          ;;
+      *.dmg)      hdiutil mount "$archive"                    ;;
+      *.gz)       gunzip "$archive"                           ;;
+      *.tar)      tar -xvf "$archive"                         ;;
+      *.tbz2)     tar -jxvf "$archive"                        ;;
+      *.tgz)      tar -zxvf "$archive"                        ;;
+      *.zip)      unzip "$archive"                            ;;
+      *.ZIP)      unzip "$archive"                            ;;
+      *.pax)      cat "$archive" | pax -r                     ;;
+      *.pax.Z)    uncompress "$archive" --stdout | pax -r     ;;
+      *.Z)        uncompress "$archive"                       ;;
+      *) print -u2 "'$archive' cannot be extracted/mounted via extract()"; return 1 ;;
     esac
   else
-     echo "'$1' is not a valid file to extract"
+     print -u2 "'$archive' is not a valid file to extract"
+     return 1
   fi
 }
