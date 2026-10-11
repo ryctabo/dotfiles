@@ -1,7 +1,8 @@
 [user]
 	name = Gustavo Pacheco
 	email = ryctabo@gmail.com
-	signingkey = B42CE82ED1085A9D
+	signingkey = 276EE881B315AF7E
+
 [alias]
 	lod = log --oneline --decorate
 	undo = restore
@@ -12,19 +13,20 @@
 	ci = commit
 	st = status
 	graph = log --oneline --decorate --graph
+
 [core]
 	editor = vim
 	autocrlf = input
+
 [pull]
 	rebase = false
+
 [init]
 	defaultbranch = main
+
 [commit]
 	gpgsign = true
-[includeIf "gitdir:~/TravelX/"]
-	path = ~/TravelX/.gitconfig
-[includeIf "gitdir:~/Almundo/"]
-	path = ~/Almundo/.gitconfig
-[includeIf "gitdir:~/Justo/"]
+
+[includeIf "gitdir:~/Justo/**"]
 	path = ~/Justo/.gitconfig
 
