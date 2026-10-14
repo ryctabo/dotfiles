@@ -34,6 +34,20 @@ plugins=(git)
 if [ -r "$ZSH/oh-my-zsh.sh" ]; then
 	source "$ZSH/oh-my-zsh.sh"
 fi
+
+# Refresh half-life's Git indicators before each prompt.
+if [[ "$ZSH_THEME" == "half-life" ]]; then
+	half_life_refresh_git() {
+		PR_GIT_UPDATE=1
+	}
+
+	add-zsh-hook precmd half_life_refresh_git
+	precmd_functions=(
+		half_life_refresh_git
+		${precmd_functions:#half_life_refresh_git}
+	)
+fi
+
 if [ -r "$HOME/.profile" ]; then
 	source ~/.profile
 fi
