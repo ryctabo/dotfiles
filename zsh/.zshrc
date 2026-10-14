@@ -95,3 +95,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # >>> Codex installer >>>
 export PATH="$HOME/.local/bin:$PATH"
 # <<< Codex installer <<<
+
+# opencode
+export PATH=/home/ryctabo/.opencode/bin:$PATH
